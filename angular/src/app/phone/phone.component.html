@@ -1,0 +1,213 @@
+<div>
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>{{ "Yasin GSM" | localize }}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="m-2">
+        <div class="col-12 ">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-9">
+                            <h3 class="card-title" style="font-size: 30px">Telefonlarımız</h3>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-1">
+                            <a style="float:right; margin-right: 10px;" class="btn bg-success" (click)="PhoneCreate()">
+                                <i class="fa fa-plus-square"></i>
+                                {{ "Oluştur" | localize }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <table>
+                    <div class="card-body table-responsive p-0 " style="overflow-y:hidden scroll;">
+                        <table class="table table-hover text-nowrap table-borderless">
+                            <thead class="bg-light" style="position: sticky; top: 0; z-index: 99;">
+                                <tr>
+                                    <th>Marka</th>
+                                    <th>Model</th>
+                                    <th>Hafıza</th>
+                                    <th>RAM</th>
+                                    <th>Renk</th>
+                                    <th>Ekran Boyutu</th>
+                                    <th>Garanti</th>
+                                    <th>Stok Adedi</th>
+                                    <th>.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let phone of phoneler ">
+                                    <td>{{phone.marka}}</td>
+                                    <td>{{phone.model}}</td>
+                                    <td>{{phone.hafiza}}</td>
+                                    <td>{{phone.ram}}</td>
+                                    <td>{{phone.renk}}</td>
+                                    <td>{{phone.ekranBouyutu}}</td>
+                                    <td>{{phone.garanti}}</td>
+                                    <td>{{phone.stokAdedi}}</td>
+                                    <td><a href="javascript:;" class="btn btn-sm bg-danger" style="float:left;" (click)="deletePhone(phone)">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        {{ "Sil" | localize }}
+                                    </a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+      <div class="row mt-2">
+        <div class="col-lg-8">
+          <a class="btn bg-success" (click)="showSatilmayanlar()">
+            <i class="fa fa-plus-square"></i>
+            {{ "Satılmayan" | localize }}
+        </a>
+        </div>
+
+        <div class="col-lg-4">
+          <a class="btn bg-success" (click)="showSatilanlar()">
+            <i class="fa fa-plus-square"></i>
+            {{ "Satılan" | localize }}
+        </a>
+        </div>
+      </div>
+    </div>
+    <div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+      <div class="col-12 ">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-9">
+                        <h3 class="card-title" style="font-size: 30px">Telefonlarımız</h3>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-1">
+                        <a style="float:right; margin-right: 10px;" class="btn bg-success" (click)="PhoneCreate()">
+                            <i class="fa fa-plus-square"></i>
+                            {{ "Oluştur" | localize }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <table>
+                <div class="card-body table-responsive p-0 " style="overflow-y:hidden scroll;">
+                    <table class="table table-hover text-nowrap table-borderless">
+                        <thead class="bg-light" style="position: sticky; top: 0; z-index: 99;">
+                            <tr>
+                                <th>Marka</th>
+                                <th>Model</th>
+                                <th>Hafıza</th>
+                                <th>RAM</th>
+                                <th>Renk</th>
+                                <th>Ekran Boyutu</th>
+                                <th>Garanti</th>
+                                <th>Stok Adedi</th>
+                                <th>.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let phone of asd ">
+                                <td>{{phone.marka}}</td>
+                                <td>{{phone.model}}</td>
+                                <td>{{phone.hafiza}}</td>
+                                <td>{{phone.ram}}</td>
+                                <td>{{phone.renk}}</td>
+                                <td>{{phone.ekranBouyutu}}</td>
+                                <td>{{phone.garanti}}</td>
+                                <td>{{phone.stokAdedi}}</td>
+                                <td><a href="javascript:;" class="btn btn-sm bg-danger" style="float:left;" (click)="deletePhone(phone)">
+                                    <i class="fas fa-pencil-alt"></i>
+                                    {{ "Sil" | localize }}
+                                </a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div id="collapseBasic2" [collapse]="isCollapsed2" [isAnimated]="true">
+      <div class="col-12 ">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-9">
+                        <h3 class="card-title" style="font-size: 30px">Telefonlarımız</h3>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-1">
+                        <a style="float:right; margin-right: 10px;" class="btn bg-success" (click)="PhoneCreate()">
+                            <i class="fa fa-plus-square"></i>
+                            {{ "Oluştur" | localize }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <table>
+                <div class="card-body table-responsive p-0 " style="overflow-y:hidden scroll;">
+                    <table class="table table-hover text-nowrap table-borderless">
+                        <thead class="bg-light" style="position: sticky; top: 0; z-index: 99;">
+                            <tr>
+                                <th>Marka</th>
+                                <th>Model</th>
+                                <th>Hafıza</th>
+                                <th>RAM</th>
+                                <th>Renk</th>
+                                <th>Ekran Boyutu</th>
+                                <th>Garanti</th>
+                                <th>Stok Adedi</th>
+                                <th>.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let phone of asd ">
+                                <td>{{phone.marka}}</td>
+                                <td>{{phone.model}}</td>
+                                <td>{{phone.hafiza}}</td>
+                                <td>{{phone.ram}}</td>
+                                <td>{{phone.renk}}</td>
+                                <td>{{phone.ekranBouyutu}}</td>
+                                <td>{{phone.garanti}}</td>
+                                <td>{{phone.stokAdedi}}</td>
+                                <td><a href="javascript:;" class="btn btn-sm bg-danger" style="float:left;" (click)="deletePhone(phone)">
+                                    <i class="fas fa-pencil-alt"></i>
+                                    {{ "Sil" | localize }}
+                                </a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </table>
+        </div>
+    </div>
+    </div>
+
+</div>
